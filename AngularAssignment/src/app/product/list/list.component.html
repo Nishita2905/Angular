@@ -6,27 +6,35 @@
 </div>
 <div class="row col-md-12">
     <div class="col-md-6">
-    <p *ngFor="let p of products | async;">
-        <span>Id:</span>{{p.id}}<br>
-        <span>Name:</span>{{p.name}}<br>
-        <span>Description:</span>{{p.description}}<br>
-        <span>Price:</span>{{p.price}}<br>
-        <span>Quantity:</span>{{p.quantity}}<br>
-        <span>Image:<img [src]="p.imgurl" style="width:50px;height:50px;"></span><br><br>
-        <span><button (click)="addtocart(p)">Add To Cart</button></span>
-    </p>
+        <table>
+    <div *ngFor="let p of products | async;">
+       
+        <tr>
+        <!--<td>Id:</td><td>{{p.id}}</td>-->
+    </tr>
+    <tr><td>Name:</td><td>{{p.name}}</td></tr>
+        <tr><td>Description:</td><td>{{p.description}}</td></tr>
+     <tr><td>Price:</td><td> {{p.price}}</td></tr>
+        <tr><td>Quantity:</td><td>{{p.quantity}}</td></tr>
+       <tr><td>Image:</td><td><img [src]="p.imgurl" style="width:50px;height:50px;"></td></tr>
+        <tr><td><button (click)="addtocart(p)">Add To Cart</button></td></tr>
+    
+</div>
+</table>
     </div>
     <div class="col-md-6">
-    
+        <table>
     <p *ngFor="let p1 of atcproducts | async">
-        <span>Id:</span>{{p1.id}}<br>
-        <span>Name:</span>{{p1.name}}<br>
-        <span>Description:</span>{{p1.description}}<br>
-        <span>Price:</span>{{p1.price}}<br>
-        <span>Quantity:</span>{{p1.quantity}}<br>
-        <span>Image:<img [src]="p1.imgurl" style="width:50px;height:50px;"></span><br><br>
-        <span><button (click)="delete(p1)">Delete</button></span>
+       <!-- <tr><td>Id:</td><td>{{p1.id}}</td></tr>-->
+        <tr><td>Name:</td><td>{{p1.name}}</td></tr>
+        <tr><td>Description:</td><td>{{p1.description}}</td></tr>
+        <tr><td>Price:</td><td>{{p1.price}}</td></tr>
+        <tr><td>Quantity:</td><td>{{p1.quantity}}</td></tr>
+        <tr><td>Image:</td><td><img [src]="p1.imgurl" style="width:50px;height:50px;"></td></tr>
+        <tr><td><button (click)="delete(p1)">Delete</button></td></tr>
+       
     </p>
+</table>
     <span>Total:</span><span>{{classReference.total}}</span>
     </div>
 </div>
